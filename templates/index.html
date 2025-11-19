@@ -1,0 +1,25 @@
+<h1>Vulnerable Flask App</h1>
+
+<h2>Stored XSS Comments</h2>
+<ul>
+    {% for c in comments %}
+        <li>{{ c|safe }}</li>
+    {% endfor %}
+</ul>
+
+<form method="POST">
+    <textarea name="comment"></textarea>
+    <button type="submit">Post Comment</button>
+</form>
+
+<h2>Upload File</h2>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button>Upload</button>
+</form>
+
+<hr>
+<a href="/profile/1">Profile 1</a><br>
+<a href="/profile/2">Profile 2</a><br>
+<a href="/profile/3">Admin Profile</a><br>
+<a href="/admin?admin=true">Admin Panel</a>

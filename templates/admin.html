@@ -1,0 +1,7 @@
+<h1>Admin Panel</h1>
+
+<ul>
+{% for id, u in users.items() %}
+    <li>{{ u.username }} - SECRET: {{ u.secret }}</li>
+{% endfor %}
+</ul>
